@@ -1,0 +1,11 @@
+{
+  "name": "electronapp",
+  "version": "1.0.0",
+  "description": "Proof of concept for deploy app",
+  "main": "index.js",
+  "scripts": {
+      "start": "electron ."
+  },
+  "author": "Marcel Serikawa",
+  "license": "ISC"
+}
