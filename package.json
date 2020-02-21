@@ -4,8 +4,35 @@
   "description": "Proof of concept for deploy app",
   "main": "index.js",
   "scripts": {
-      "start": "electron ."
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "start": "electron .",
+    "build": "electron-builder build --mac --win --publish never",
+    "deploy": "electron-builder build --mac --win --publish always"
   },
   "author": "Marcel Serikawa",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.0.1",
+    "electron-builder": "^22.3.2"
+  },
+  "build": {
+    "appId": "concept1",
+    "mac": {
+      "category": "com.concept.proof"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS"
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^4.2.2"
+  }
 }
